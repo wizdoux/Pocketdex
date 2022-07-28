@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './poke-header.component.html',
   styleUrls: ['./poke-header.component.scss']
 })
+
 export class PokeHeaderComponent implements OnInit {
 
   constructor() { }
