@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;700&display=swap');
 
 @import './config-scss/variables.scss';
-@import './config-scss/reset.scss';
 @import './config-scss/rem-calc.scss';
-@import './config-scss/btn.scss';
-@import './config-scss/animation.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+}
 
 html {
 	font-family: 'Roboto', sans-serif;
@@ -12,7 +14,6 @@ html {
 }
 
 main {
-	max-width: rem-calc(600);
 	box-sizing: border-box;
 	padding: 0 20px;
 	margin: 0 auto;

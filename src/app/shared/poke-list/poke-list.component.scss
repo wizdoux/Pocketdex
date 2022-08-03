@@ -3,13 +3,10 @@
 $padding: rem-calc(20);
 
 :host {
-	width: 100%;
-
 	.listagem {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		flex-wrap: wrap;
-
 		padding: $padding 0;
 
 		.pokemon {
@@ -17,8 +14,8 @@ $padding: rem-calc(20);
 			display: flex;
 			background: var(--branco);
 
-			width: calc(49% - 2.5rem);
-			height: rem-calc(157 - 40);
+			width: 200px;
+			height: 150px;
 
 			margin-bottom: rem-calc(10);
 			padding: $padding;
@@ -26,7 +23,7 @@ $padding: rem-calc(20);
 			border-radius: rem-calc(10);
 
 			text-decoration: none;
-			color: var(--primary-color);
+			color: black;
 
 			&__status {
 				h2 {
@@ -43,17 +40,19 @@ $padding: rem-calc(20);
 					flex-direction: column;
 
 					li {
-						background: var(--cinza);
-						font-size: rem-calc(10);
-
 						display: flex;
 						justify-content: center;
 						align-items: center;
 
+						background: var(--cinza);
+						font-size: rem-calc(10);
 						border-radius: rem-calc(50);
-
-						width: rem-calc(60);
 						margin-bottom: rem-calc(5);
+
+						width: 70px;
+						height: 20px;
+						font-weight: bold;
+						color: white;
 					}
 				}
 			}
@@ -71,7 +70,8 @@ $padding: rem-calc(20);
 				right: $padding;
 				bottom: $padding;
 
-				background: url('../../../assets/bg/background-list-pokemons.svg') no-repeat;
+				background: white;
+				border-radius: 20px;
 
 				img {
 					width: rem-calc(60);

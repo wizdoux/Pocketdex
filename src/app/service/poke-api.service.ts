@@ -9,7 +9,10 @@ import { Observable } from 'rxjs';
 })
 
 export class PokeApiService {
-  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100';
+
+  // retornar todos os pokemons (da primeira geração)
+  private url: string = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
+  
 
   constructor(
     private http: HttpClient
@@ -20,11 +23,9 @@ export class PokeApiService {
       tap(res => res),
       tap(res => {
         res.results.map((resPokemons: any) => {
-
           this.apiGetPokemon(resPokemons.url).subscribe(
             res => resPokemons.status = res
           );
-
         })
       })
     )
@@ -37,4 +38,5 @@ export class PokeApiService {
       )
     )
   }
+  
 }

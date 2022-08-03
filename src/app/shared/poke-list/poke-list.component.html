@@ -2,32 +2,25 @@
 
 <section class="listagem">
   <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-    <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status">
+    <a class="pokemon" *ngIf="pokemon.status">
       <section class="pokemon__status">
         <h2>
-          {{ pokemon.name }}
+          #{{ pokemon.status.id }}: {{ pokemon.name }}
         </h2>
 
         <ul>
-          <li *ngFor="let value of pokemon.status.types">
-            {{value.type.name}}
+          <li *ngFor="let value of pokemon.status.types"
+            [ngStyle]="{'background-color':fundoPorTipo(value.type.name)}">
+            {{value.type.name | uppercase}}
           </li>
         </ul>
       </section>
 
       <section class="pokemon__image">
-        <img
-          [src]="pokemon.status.sprites.other.dream_world.front_default"
-          [alt]="pokemon.name"
-        >
+        <img [src]="pokemon.status.sprites.other.dream_world.front_default" [alt]="pokemon.name">
       </section>
     </a>
   </ng-template>
 </section>
 
-<img
-  src="assets/error.png"
-  alt="Deu erro na mostragem do pokemon"
-  width="100%"
-  *ngIf="apiError"
->
+<img src="assets/error.png" alt="Deu erro na mostragem do pokemon" width="100%" *ngIf="apiError">
